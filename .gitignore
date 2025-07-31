@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Data files
+data/*.csv
+!data/.gitkeep  # <-- keep folder tracked but ignore contents
+
+# Logs and outputs
+*.log
+*.out
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Docker
+*.pid
+*.tar
+*.sock
+
+# Environment variables and secrets
+.env
+*.env
+
+# Locust report files
+*.locust.log
+*.stats.csv
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+
+# Test cache
+.pytest_cache/
+
+# MyPy & coverage
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Other OS files
+*.swp
+*.swo
+*~
