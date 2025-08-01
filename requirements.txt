@@ -6,3 +6,4 @@ python-dotenv
 streamlit
 openai
 python-dotenv
+llama-index-agent-openai

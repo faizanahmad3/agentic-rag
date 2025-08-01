@@ -2,7 +2,8 @@ from llama_index.core import Document, VectorStoreIndex, StorageContext, Service
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
 from src.utils.config import Config
-import src.utils.llm_setup
+from src.tools.qdrant_helper import client
+
 
 def build_qdrant_index(pages_data, collection_name="rag_collection"):
     """
@@ -17,8 +18,6 @@ def build_qdrant_index(pages_data, collection_name="rag_collection"):
         }
         documents.append(Document(text=page["text"], metadata=metadata))
 
-    # Connect to Qdrant
-    client = QdrantClient(host=Config.QDRANT_HOST, port=Config.QDRANT_PORT)
 
     # Create Qdrant Vector Store
     vector_store = QdrantVectorStore(client=client, collection_name=collection_name)

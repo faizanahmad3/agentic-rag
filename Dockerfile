@@ -13,8 +13,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy source code
 COPY . .
 
-## Expose port (for Streamlit or FastAPI)
-#EXPOSE 8501
-#
-## Default command (run Streamlit or FastAPI later)
-#CMD ["streamlit", "run", "src/ui/app.py"]
+# Set PYTHONPATH so src is discoverable
+ENV PYTHONPATH=/app
+
+# Expose port (for Streamlit or FastAPI)
+EXPOSE 8501
+
+# Default command (run Streamlit or FastAPI later)
+CMD ["streamlit", "run", "src/ui/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
