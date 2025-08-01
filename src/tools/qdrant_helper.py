@@ -2,7 +2,10 @@ from qdrant_client import QdrantClient
 from src.utils.config import Config
 from llama_index.core import Document
 
-client = QdrantClient(host=Config.QDRANT_HOST, port=Config.QDRANT_PORT)
+client = QdrantClient(
+    url=Config.QDRANT_HOST,
+    api_key=Config.QDRANT_API_KEY
+)
 
 
 from qdrant_client.http.exceptions import UnexpectedResponse
